@@ -1,0 +1,21 @@
+program recursionTest (input,output);
+
+
+function recursion (a: integer; b:integer) : int;
+   var x : integer;
+begin
+   if b= 0 then gcd := a
+   else begin
+     x := a;
+     while (x >= b) do
+     begin
+        x := x - b
+     end;
+     recursion := recursion(b,x)
+   end
+end;
+
+begin
+   write (recursion(152, 58));
+   write (recursion(31752, 36));
+end.

@@ -1,0 +1,23 @@
+program arrayTest(input, output);
+
+
+procedure array;
+var
+  a : array[0..10] of integer;
+  i : integer;
+
+begin
+    for i := 0 to 10 do
+    begin
+        a[i] := i;
+    end;
+
+    for i := 0 to 10 do
+    begin
+        write(a[i]);
+    end;
+end;
+
+begin
+    array();
+end.

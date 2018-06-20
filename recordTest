@@ -1,0 +1,19 @@
+program recordTest(input, output);
+
+const
+    const_age = 11;
+
+type
+  Test = record
+    name :string
+  end;
+
+var
+  test : Test;
+
+begin
+        test.name := 'azor';
+
+
+        writes(test.name);
+end.
