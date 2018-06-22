@@ -37,6 +37,7 @@ UNTIL            : 'until'           ;
 VAR              : 'var'             ;
 WHILE            : 'while'           ;
 STRING           : 'string'          ;
+WRITE            : 'write'           ;
 
 
 ASSIGN          : ':='  ;
@@ -263,11 +264,14 @@ exitStatement
     : EXIT 
     ;
 
-
+writeStatement
+    : WRITE LPAREN (identifier|string|unsignedNumber|signedFactor) RPAREN
+    ;
 simpleStatement
     : assignmentStatement
     | procedureStatement
     | exitStatement
+    | writeStatement
     | emptyStatement
     ;
 //np x:= 2+a albo x.x := 2 ogolnie przypisania

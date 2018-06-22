@@ -13,7 +13,7 @@ public class Translator
 {
     public static void main(String[] args) throws Exception
     {
-        ANTLRInputStream input = new ANTLRInputStream(ReadFile.readFile("test"));
+        ANTLRInputStream input = new ANTLRInputStream(ReadFile.readFile("factorial"));
 
         PascalLexer lexer = new PascalLexer(input);
         CommonTokenStream tokens = new CommonTokenStream(lexer);

@@ -269,6 +269,12 @@ public interface PascalVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExitStatement(PascalParser.ExitStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link PascalParser#writeStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWriteStatement(PascalParser.WriteStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link PascalParser#simpleStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

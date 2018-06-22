@@ -318,6 +318,13 @@ public class PascalBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitWriteStatement(PascalParser.WriteStatementContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitSimpleStatement(PascalParser.SimpleStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

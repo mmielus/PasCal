@@ -6,14 +6,16 @@ result : integer;
 i : integer;
 begin
     if n < 0 then begin
-        write(-1);
+
     end else if n = 0 or n = 1 then begin
-        write(1);
+
     end else begin
         result := 1;
         for i := 2 to n+1 do begin
             result := result * i;
         end;
+
+
         write(result);
     end;
 end;

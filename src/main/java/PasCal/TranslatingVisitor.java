@@ -274,6 +274,7 @@ public class TranslatingVisitor extends PascalBaseVisitor<String>
         return String.format("%s %s;", type, ids);
     }
 
+
     @Override
     public String visitPointerType(PascalParser.PointerTypeContext ctx)
     {
@@ -461,6 +462,13 @@ public class TranslatingVisitor extends PascalBaseVisitor<String>
         String var = visit(ctx.variable());
         String expr = visit(ctx.expression());
         return String.format("%s = %s;\n", var, expr);
+    }
+
+    @Override
+    public String visitWriteStatement(PascalParser.WriteStatementContext ctx)
+    {
+        String ident = visit(ctx.identifier());
+        return String.format("printf(\"%s\",%s);\n", "%d", ident);
     }
 
     @Override
@@ -845,7 +853,9 @@ public class TranslatingVisitor extends PascalBaseVisitor<String>
 
         return String.format("? = %s; ? %s %s; ?%s",
                 initialValue, rel, finalValue, updateType);
-    }    @Override
+    }
+
+    @Override
     public String visitInitialValue(PascalParser.InitialValueContext ctx)
     {
         return visitChildren(ctx);
